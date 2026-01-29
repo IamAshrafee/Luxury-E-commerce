@@ -1,0 +1,28 @@
+:root {
+  /* Colors - Luxury Dark Theme */
+  --color-bg: #0C0A09; /* Stone 950 */
+  --color-surface: #1C1917; /* Stone 900 */
+  --color-primary: #CA8A04; /* Gold/Yellow 600 */
+  --color-text: #FAFAF9; /* Stone 50 */
+  --color-text-muted: #A8A29E; /* Stone 400 */
+  
+  /* Glass Effects */
+  --glass-bg: rgba(28, 25, 23, 0.3);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-blur: 12px;
+  
+  /* Typography */
+  --font-heading: 'Cormorant', serif;
+  --font-body: 'Montserrat', sans-serif;
+  
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 8rem;
+
+  /* Transitions */
+  --transition-slow: 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-normal: 0.3s ease-out;
+}

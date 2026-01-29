@@ -1,0 +1,70 @@
+import React, { useRef, useEffect } from 'react'
+import './ProductShowcase.css'
+import perfumeImg from '../assets/images/perfume.png'
+import watchImg from '../assets/images/watch.png'
+import crystalImg from '../assets/images/crystal.png'
+
+const products = [
+    {
+        id: 1,
+        name: "Or Noir",
+        category: "Parfum",
+        price: "€450",
+        image: perfumeImg,
+    },
+    {
+        id: 2,
+        name: "Chronos One",
+        category: "Timepiece",
+        price: "€12,500",
+        image: watchImg,
+    },
+    {
+        id: 3,
+        name: "Lumina",
+        category: "Fine Jewelry",
+        price: "€3,200",
+        image: crystalImg,
+    },
+    // Duplicate for scrolling effect demo
+    {
+        id: 4,
+        name: "Or Noir II",
+        category: "Parfum",
+        price: "€450",
+        image: perfumeImg,
+    }
+]
+
+const ProductShowcase = () => {
+    const scrollRef = useRef(null)
+
+    return (
+        <section className="showcase" id="collections">
+            <div className="container">
+                <div className="section-header">
+                    <h2 className="section-title">Curated <span className="gold-text">Excellence</span></h2>
+                    <p className="section-subtitle">Discover our masterpiece collection defined by rarity.</p>
+                </div>
+
+                <div className="carousel-container" ref={scrollRef}>
+                    {products.map((product) => (
+                        <div key={product.id} className="product-card glass-panel">
+                            <div className="card-image">
+                                <img src={product.image} alt={product.name} loading="lazy" />
+                            </div>
+                            <div className="card-info">
+                                <span className="product-category">{product.category}</span>
+                                <h3 className="product-name">{product.name}</h3>
+                                <p className="product-price">{product.price}</p>
+                                <button className="view-btn">View Details</button>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    )
+}
+
+export default ProductShowcase
