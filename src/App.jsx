@@ -17,6 +17,7 @@ import BlogPost from './pages/BlogPost'
 
 import Login from './pages/Login'
 import Register from './pages/Register'
+import ForgotPassword from './pages/ForgotPassword'
 import Dashboard from './pages/dashboard/Dashboard'
 
 import CartSidebar from './components/cart/CartSidebar'
@@ -33,6 +34,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/account" element={<Dashboard />} />
           <Route path="/about" element={<About />} />
           <Route path="/blog" element={<Blog />} />

@@ -5,6 +5,7 @@ import { z } from 'zod';
 import { Link } from 'react-router-dom';
 import FormInput from '../components/ui/FormInput';
 import Button from '../components/ui/Button';
+import AuthLayout from '../components/layout/AuthLayout';
 import './Register.css';
 
 // Validation Schema
@@ -41,66 +42,64 @@ const Register = () => {
     };
 
     return (
-        <div className="auth-page">
-            <div className="auth-container">
-                <div className="auth-header">
-                    <h1 className="auth-title">Create Account</h1>
-                    <p className="auth-subtitle">Join the world of exclusive luxury</p>
-                </div>
-
-                <form onSubmit={handleSubmit(onSubmit)} className="auth-form">
-                    <FormInput
-                        label="Full Name"
-                        name="name"
-                        placeholder="John Doe"
-                        register={register}
-                        error={errors.name}
-                    />
-
-                    <FormInput
-                        label="Email Address"
-                        name="email"
-                        type="email"
-                        placeholder="john@example.com"
-                        register={register}
-                        error={errors.email}
-                    />
-
-                    <FormInput
-                        label="Password"
-                        name="password"
-                        type="password"
-                        placeholder="••••••••"
-                        register={register}
-                        error={errors.password}
-                    />
-
-                    <FormInput
-                        label="Confirm Password"
-                        name="confirmPassword"
-                        type="password"
-                        placeholder="••••••••"
-                        register={register}
-                        error={errors.confirmPassword}
-                    />
-
-                    <div style={{ marginTop: '1rem' }}>
-                        <Button
-                            type="submit"
-                            fullWidth
-                            loading={isSubmitting}
-                        >
-                            Create Account
-                        </Button>
-                    </div>
-                </form>
-
-                <div className="auth-footer">
-                    Already have an account?
-                    <Link to="/login" className="auth-link">Sign In</Link>
-                </div>
+        <AuthLayout mode="register">
+            <div className="auth-header">
+                <h1 className="auth-title">Create Account</h1>
+                <p className="auth-subtitle">Join the world of exclusive luxury</p>
             </div>
-        </div>
+
+            <form onSubmit={handleSubmit(onSubmit)} className="auth-form">
+                <FormInput
+                    label="Full Name"
+                    name="name"
+                    placeholder="John Doe"
+                    register={register}
+                    error={errors.name}
+                />
+
+                <FormInput
+                    label="Email Address"
+                    name="email"
+                    type="email"
+                    placeholder="john@example.com"
+                    register={register}
+                    error={errors.email}
+                />
+
+                <FormInput
+                    label="Password"
+                    name="password"
+                    type="password"
+                    placeholder="••••••••"
+                    register={register}
+                    error={errors.password}
+                />
+
+                <FormInput
+                    label="Confirm Password"
+                    name="confirmPassword"
+                    type="password"
+                    placeholder="••••••••"
+                    register={register}
+                    error={errors.confirmPassword}
+                />
+
+                <div style={{ marginTop: '1rem' }}>
+                    <Button
+                        type="submit"
+                        fullWidth
+                        loading={isSubmitting}
+                    >
+                        Create Account
+                    </Button>
+                </div>
+            </form>
+
+            <div className="auth-footer">
+                Already have an account?
+                <Link to="/login" className="auth-link">Sign In</Link>
+            </div>
+        </AuthLayout>
     );
 };
 

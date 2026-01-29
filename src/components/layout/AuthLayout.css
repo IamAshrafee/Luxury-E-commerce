@@ -1,0 +1,99 @@
+.auth-layout {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8rem 1rem 4rem;
+    /* Top 8rem to clear header, Bottom 4rem */
+    background-color: var(--color-background, #0C0A09);
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+/* Background Gradients - Unified for all Auth Pages */
+.auth-layout::before,
+.auth-layout::after {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    filter: blur(100px);
+    z-index: 0;
+    opacity: 0.15;
+    transition: all 1s ease-in-out;
+    /* Smooth transition if we change positions later */
+}
+
+.auth-layout::before {
+    background: var(--color-primary, #CA8A04);
+    top: -100px;
+    left: -100px;
+}
+
+.auth-layout::after {
+    background: #4ade80;
+    /* Subtle green accent */
+    bottom: -100px;
+    right: -100px;
+    opacity: 0.05;
+}
+
+/* The prompt mentions smooth moving animation when switching. 
+   We can animate the form container entering. */
+.auth-page-content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Shared Glassmorphism Card Style */
+.auth-card-shared {
+    width: 100%;
+    max-width: 480px;
+    /* Consistent max-width */
+    padding: 3rem;
+    border-radius: 24px;
+    background: rgba(28, 25, 23, 0.3);
+    /* Glass bg */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    animation: fadeInSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Register page might need a bit more width */
+.auth-layout.register-mode .auth-card-shared {
+    max-width: 520px;
+}
+
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .auth-layout {
+        padding: 6rem 1rem 3rem;
+        /* 6rem top for mobile header */
+        align-items: flex-start;
+        /* Better for mobile scrolling */
+    }
+
+    .auth-card-shared {
+        padding: 2rem 1.5rem;
+        border-radius: 20px;
+    }
+}
