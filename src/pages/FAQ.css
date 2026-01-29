@@ -61,88 +61,11 @@
     border-left: 2px solid var(--color-primary);
 }
 
-/* Accordion Styles */
+/* Accordion Group Layout */
 .accordion-group {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-}
-
-.accordion-item {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 4px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.accordion-item:hover {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.1);
-}
-
-.accordion-item.active {
-    background: rgba(12, 10, 9, 0.8);
-    border-color: rgba(202, 138, 4, 0.3);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-.accordion-header {
-    padding: 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.accordion-question {
-    font-family: var(--font-body);
-    font-size: 1.1rem;
-    color: var(--color-text);
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.accordion-item.active .accordion-question {
-    color: var(--color-primary);
-}
-
-.accordion-icon {
-    color: var(--color-text-muted);
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    display: flex;
-    align-items: center;
-}
-
-.accordion-item.active .accordion-icon {
-    color: var(--color-primary);
-    transform: rotate(45deg);
-    /* Turns plus to x if using plus, or rotates chevron */
-}
-
-.accordion-body {
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: grid-template-rows 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.accordion-body.open {
-    grid-template-rows: 1fr;
-}
-
-.accordion-content {
-    overflow: hidden;
-    padding: 0 1.5rem;
-    color: var(--color-text-muted);
-    line-height: 1.7;
-    font-size: 0.95rem;
-    opacity: 0;
-    transition: opacity 0.5s ease, padding 0.5s ease;
-}
-
-.accordion-body.open .accordion-content {
-    padding: 0 1.5rem 1.5rem 1.5rem;
-    opacity: 1;
 }
 
 /* Animation Utilities if not global */
