@@ -1,0 +1,382 @@
+/* Cart Sidebar Styles */
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    backdrop-filter: blur(var(--glass-blur));
+    /* background: rgba(0, 0, 0, 0.4); */
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-slow);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    /* Center vertical if we want, but top/bottom margins are cleaner */
+}
+
+/* Float it */
+.cart-sidebar {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+    bottom: 1.5rem;
+    width: 100%;
+    max-width: 420px;
+
+    /* Glass styles inherited from .glass-panel but overridden for cart specifics if needed */
+    /* ensure we typically use glass vars if we want consistency, but here darker is fine */
+    /* background: rgba(15, 15, 15, 0.85); */
+
+    /* Animation States */
+    transform: translateX(110%) scale(0.96);
+    opacity: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    /* Smooth Apple-like spring */
+    transition: all var(--transition-slow);
+    box-shadow: -20px 0 50px rgba(0, 0, 0, 0.4);
+
+    /* Ensure internal radii match */
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+/* Open State */
+/* Open state logic managed by JS state + visible props */
+
+/* Wrapper hack to animate overlay visibility properly with react logic usually needs state */
+/* But here we rely on the component rendering null if !isOpen. 
+   Wait, the component returns null if !isOpen? 
+   No, usually we want it mounted to animate out. 
+   The current code: `if (!isOpen) return null;` 
+   This PREVENTS exit animations. 
+   The user code returns null immediately. 
+   To support smooth exit animations, we usually need a mounting animation library or keeping it mounted.
+   However, assuming we just want the Entrance to be smooth as requested: "opening from side right to left".
+*/
+
+/* Resetting visibility for the overlay wrapper itself based on the child state isn't possible in CSS alone if child is unmounted. 
+   Since the original code was `if (!isOpen) return null`, there is NO animation on exit. 
+   For now, I will style the Entry animation perfectly. 
+*/
+
+.cart-overlay {
+    /* Since it mounts newly, we need keyframes or start state */
+    animation: overlayFadeIn 0.5s ease forwards;
+}
+
+.cart-sidebar.open {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+    /* Since it mounts with 'open' class immediately, 
+       we might need a keyframe animation OR rely on a small timeout in JS. 
+       But CSS Keyframes are more reliable for "mount and animate" pattern. 
+    */
+    animation: sidebarSlideIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes overlayFadeIn {
+    from {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    to {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes sidebarSlideIn {
+    from {
+        transform: translateX(110%) scale(0.96);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Inner Layout */
+.cart-header {
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cart-header h2 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-text);
+}
+
+.close-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    color: var(--color-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.close-btn:hover {
+    background: var(--color-primary);
+    color: #000;
+    transform: rotate(90deg);
+}
+
+/* Items */
+.cart-items {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0 2rem;
+}
+
+/* Scrollbar refinement */
+.cart-items::-webkit-scrollbar {
+    width: 4px;
+}
+
+.cart-items::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.cart-items::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+/* Empty State */
+.empty-cart {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+    gap: 1.5rem;
+    animation: fadeInUp 0.5s ease backwards;
+}
+
+.empty-cart p {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--color-text-muted);
+    font-weight: 300;
+}
+
+.shop-now-btn {
+    background: transparent;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    padding: 1rem 2rem;
+    font-family: var(--font-body);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.shop-now-btn:hover {
+    background: var(--color-primary);
+    color: #000;
+    box-shadow: 0 0 20px rgba(202, 138, 4, 0.2);
+}
+
+.cart-item {
+    display: flex;
+    gap: 1.5rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    /* Animation for list items */
+    animation: fadeInUp 0.5s ease backwards;
+}
+
+/* Stagger items */
+.cart-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.cart-item:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.cart-item:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.item-image {
+    width: 70px;
+    aspect-ratio: 1/1;
+    /* Square for product grid */
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.item-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.item-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.item-info h4 {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+    color: var(--color-text);
+}
+
+.item-price {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+.item-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.qty-control {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 4px;
+    padding: 2px;
+}
+
+.qty-control button {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    color: var(--color-text);
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 2px;
+}
+
+.qty-control button:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.qty-control span {
+    width: 24px;
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.remove-btn {
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
+    background: none;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: all 0.2s;
+}
+
+.remove-btn:hover {
+    color: #ef4444;
+    opacity: 1;
+}
+
+/* Footer */
+.cart-footer {
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 1.5rem;
+}
+
+.cart-total span:first-child {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+}
+
+.total-amount {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--color-text);
+    line-height: 1;
+}
+
+.checkout-btn {
+    width: 100%;
+    background: var(--color-primary);
+    color: #000;
+    border: none;
+    padding: 1.2rem;
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 2px;
+}
+
+.checkout-btn:hover {
+    background: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .cart-sidebar {
+        /* Full screen on mobile */
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        max-width: 100%;
+        border-radius: 0;
+    }
+}

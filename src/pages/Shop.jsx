@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { addToCart } from '../store/cartSlice'
 import './Shop.css'
 import { products } from '../data/products'
 
 const Shop = () => {
+    const dispatch = useDispatch();
     const [sortBy, setSortBy] = useState('newest');
     const [gridCols, setGridCols] = useState(window.innerWidth < 768 ? 1 : 3);
     const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -164,7 +167,12 @@ const Shop = () => {
                             <div className="card-image-wrapper">
                                 <img src={product.image} alt={product.name} className="product-image" loading="lazy" />
                                 <div className="card-overlay">
-                                    <button className="view-btn">View Details</button>
+                                    <button
+                                        className="view-btn"
+                                        onClick={() => dispatch(addToCart(product))}
+                                    >
+                                        Add to Bag
+                                    </button>
                                 </div>
                             </div>
                             <div className="card-info">

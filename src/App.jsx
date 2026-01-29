@@ -11,17 +11,22 @@ import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsConditions from './pages/TermsConditions'
 import About from './pages/About'
 import Shop from './pages/Shop'
+import Cart from './pages/Cart'
 import Blog from './pages/Blog'
 import BlogPost from './pages/BlogPost'
+
+import CartSidebar from './components/cart/CartSidebar'
 
 function App() {
   return (
     <BrowserRouter>
       <div className="app">
         <Navigation />
+        <CartSidebar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Shop />} />
+          <Route path="/cart" element={<Cart />} />
           <Route path="/about" element={<About />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<BlogPost />} />
