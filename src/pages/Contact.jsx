@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react'
 import './Contact.css'
+import CustomSelect from '../components/common/CustomSelect'
 
 const Contact = () => {
+    const [subject, setSubject] = React.useState(''); // State for custom dropdown
+
     // Scroll to top on mount
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -46,13 +49,18 @@ const Contact = () => {
                             <input type="email" id="email" required placeholder="Enter your email" />
                         </div>
                         <div className="form-group">
-                            <label htmlFor="subject">Subject</label>
-                            <select id="subject" className="select-field">
-                                <option>General Inquiry</option>
-                                <option>Book Appointment</option>
-                                <option>Private Viewing</option>
-                                <option>Order Support</option>
-                            </select>
+                            <CustomSelect
+                                label="Subject"
+                                placeholder="Select an option"
+                                options={[
+                                    "General Inquiry",
+                                    "Book Appointment",
+                                    "Private Viewing",
+                                    "Order Support"
+                                ]}
+                                value={subject}
+                                onChange={setSubject}
+                            />
                         </div>
                         <div className="form-group">
                             <label htmlFor="message">Message</label>
