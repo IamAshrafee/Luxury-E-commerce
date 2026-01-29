@@ -10,6 +10,7 @@ import FAQ from './pages/FAQ'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsConditions from './pages/TermsConditions'
 import Blog from './pages/Blog'
+import BlogPost from './pages/BlogPost'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:id" element={<BlogPost />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/shipping-returns" element={<ShippingReturns />} />
           <Route path="/faq" element={<FAQ />} />

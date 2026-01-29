@@ -2,40 +2,7 @@ import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import './Blog.css'
 
-const blogPosts = [
-    {
-        id: 1,
-        title: "The Art of Slow Living",
-        category: "Lifestyle",
-        date: "January 24, 2026",
-        image: "https://images.unsplash.com/photo-1507643179173-61b039ed6930?q=80&w=1000&auto=format&fit=crop",
-        excerpt: "Discover how to cultivate presence and luxury in your everyday moments through the philosophy of slow living."
-    },
-    {
-        id: 2,
-        title: "Sustainable Luxury: A New Era",
-        category: "Sustainability",
-        date: "January 18, 2026",
-        image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1000&auto=format&fit=crop",
-        excerpt: "Exploring the intersection of ethical craftsmanship and premium aesthetics in modern fashion."
-    },
-    {
-        id: 3,
-        title: "Behind the Seams: The Atelier",
-        category: "Craftsmanship",
-        date: "January 10, 2026",
-        image: "https://images.unsplash.com/photo-1589785250499-5231c6b12a32?q=80&w=1000&auto=format&fit=crop",
-        excerpt: "An exclusive look into the meticulous process of creating our signature leather collection."
-    },
-    {
-        id: 4,
-        title: "Curating Your Personal Sanctuary",
-        category: "Interiors",
-        date: "January 05, 2026",
-        image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1000&auto=format&fit=crop",
-        excerpt: "Expert tips on transforming your living space into a retreat of comfort and elegance."
-    }
-];
+import { blogPosts } from '../data/blogPosts'
 
 const Blog = () => {
     // Scroll to top on mount
