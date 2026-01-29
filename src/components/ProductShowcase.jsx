@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react'
 import './ProductShowcase.css'
 import CarouselControl from './CarouselControl'
+import CarouselProgress from './CarouselProgress'
 import perfumeImg from '../assets/images/perfume.png'
 import watchImg from '../assets/images/watch.png'
 import crystalImg from '../assets/images/crystal.png'
@@ -41,12 +42,18 @@ const ProductShowcase = () => {
     const scrollRef = useRef(null)
     const [canScrollLeft, setCanScrollLeft] = React.useState(false)
     const [canScrollRight, setCanScrollRight] = React.useState(true)
+    const [progress, setProgress] = React.useState(0)
 
     const checkScroll = () => {
         if (scrollRef.current) {
             const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current
             setCanScrollLeft(scrollLeft > 0)
             setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10) // buffer
+
+            // Calculate progress percentage
+            const maxScroll = scrollWidth - clientWidth
+            const currentProgress = maxScroll > 0 ? (scrollLeft / maxScroll) * 100 : 0
+            setProgress(currentProgress)
         }
     }
 
@@ -110,6 +117,8 @@ const ProductShowcase = () => {
                         isVisible={canScrollRight}
                     />
                 </div>
+
+                <CarouselProgress progress={progress} />
             </div>
         </section>
     )

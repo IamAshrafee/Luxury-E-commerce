@@ -1,0 +1,47 @@
+.carousel-progress-track {
+    width: 120px;
+    /* Shorter for minimalism */
+    height: 1px;
+    /* Ultra thin */
+    background: rgba(255, 255, 255, 0.1);
+    /* Barely visible track */
+    margin: 2.5rem auto 0;
+    position: relative;
+    overflow: visible;
+    /* Allow glow to bleed out */
+}
+
+.carousel-progress-thumb {
+    height: 2px;
+    /* Slightly thicker than track */
+    background: var(--color-primary);
+    position: absolute;
+    /* Absolute to center vertically on track */
+    top: 50%;
+    transform: translateY(-50%);
+    transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    /* Elegant easing */
+    box-shadow: 0 0 10px rgba(202, 138, 4, 0.5);
+    /* Soft gold aura */
+}
+
+/* The glow is now a moving light point */
+.progress-glow {
+    position: absolute;
+    right: -2px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 4px;
+    background: #fff;
+    /* White hot tip */
+    border-radius: 50%;
+    box-shadow: 0 0 8px 2px rgba(202, 138, 4, 0.8);
+}
+
+@media (max-width: 768px) {
+    .carousel-progress-track {
+        width: 100px;
+        margin-top: 2rem;
+    }
+}
