@@ -52,12 +52,14 @@ const ProductShowcase = () => {
                         <div key={product.id} className="product-card glass-panel">
                             <div className="card-image">
                                 <img src={product.image} alt={product.name} loading="lazy" />
+                                <div className="card-overlay">
+                                    <button className="view-btn">View Details</button>
+                                </div>
                             </div>
                             <div className="card-info">
                                 <span className="product-category">{product.category}</span>
                                 <h3 className="product-name">{product.name}</h3>
                                 <p className="product-price">{product.price}</p>
-                                <button className="view-btn">View Details</button>
                             </div>
                         </div>
                     ))}
