@@ -2,41 +2,7 @@ import React, { useRef, useEffect } from 'react'
 import './ProductShowcase.css'
 import CarouselControl from '../../ui/CarouselControl'
 import CarouselProgress from '../../ui/CarouselProgress'
-import perfumeImg from '../../../assets/images/perfume.png'
-import watchImg from '../../../assets/images/watch.png'
-import crystalImg from '../../../assets/images/crystal.png'
-
-const products = [
-    {
-        id: 1,
-        name: "Or Noir",
-        category: "Parfum",
-        price: "€450",
-        image: perfumeImg,
-    },
-    {
-        id: 2,
-        name: "Chronos One",
-        category: "Timepiece",
-        price: "€12,500",
-        image: watchImg,
-    },
-    {
-        id: 3,
-        name: "Lumina",
-        category: "Fine Jewelry",
-        price: "€3,200",
-        image: crystalImg,
-    },
-    // Duplicate for scrolling effect demo
-    {
-        id: 4,
-        name: "Or Noir II",
-        category: "Parfum",
-        price: "€450",
-        image: perfumeImg,
-    }
-]
+import { products } from '../../../data/products'
 
 const ProductShowcase = () => {
     const scrollRef = useRef(null)
