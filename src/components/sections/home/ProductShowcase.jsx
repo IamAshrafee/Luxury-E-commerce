@@ -1,10 +1,10 @@
 import React, { useRef, useEffect } from 'react'
 import './ProductShowcase.css'
-import CarouselControl from '../ui/CarouselControl'
-import CarouselProgress from '../ui/CarouselProgress'
-import perfumeImg from '../../assets/images/perfume.png'
-import watchImg from '../../assets/images/watch.png'
-import crystalImg from '../../assets/images/crystal.png'
+import CarouselControl from '../../ui/CarouselControl'
+import CarouselProgress from '../../ui/CarouselProgress'
+import perfumeImg from '../../../assets/images/perfume.png'
+import watchImg from '../../../assets/images/watch.png'
+import crystalImg from '../../../assets/images/crystal.png'
 
 const products = [
     {

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import './StorySection.css'
-import craftsmanshipImg from '../../assets/images/craftsmanship.png'
+import craftsmanshipImg from '../../../assets/images/craftsmanship.png'
 
 const StorySection = () => {
     const observerRef = useRef(null);

@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react'
 import './TheEdit.css'
-import perfumeImg from '../../assets/images/edit_perfume.png'
-import watchImg from '../../assets/images/edit_watch.png'
-import jewelryImg from '../../assets/images/edit_jewelry.png'
+import perfumeImg from '../../../assets/images/edit_perfume.png'
+import watchImg from '../../../assets/images/edit_watch.png'
+import jewelryImg from '../../../assets/images/edit_jewelry.png'
 
 const TheEdit = () => {
     const observerRef = useRef(null);
