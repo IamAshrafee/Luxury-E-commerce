@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import './StorySection.css'
+import craftsmanshipImg from '../../assets/images/craftsmanship.png'
 
 const StorySection = () => {
     const observerRef = useRef(null);
@@ -36,8 +37,9 @@ const StorySection = () => {
                         </p>
                     </div>
                     <div className="story-visual fade-in-up delay-200">
-                        <div className="visual-block glass-panel">
-                            <div className="abstract-shape"></div>
+                        <div className="visual-block">
+                            <img src={craftsmanshipImg} alt="Craftsmanship" className="story-image" />
+                            <div className="glow-effect"></div>
                         </div>
                     </div>
                 </div>
