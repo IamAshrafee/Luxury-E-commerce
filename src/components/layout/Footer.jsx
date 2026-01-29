@@ -40,7 +40,7 @@ const Footer = () => {
                         <div className="nav-column">
                             <h4>Client Care</h4>
                             <Link to="/contact">Contact Us</Link>
-                            <a href="#">Shipping & Returns</a>
+                            <Link to="/shipping-returns">Shipping & Returns</Link>
                             <a href="#">Size Guide</a>
                             <a href="#">FAQ</a>
                         </div>
