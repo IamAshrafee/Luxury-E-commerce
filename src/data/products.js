@@ -12,6 +12,8 @@ export const products = [
         category: "Parfum",
         price: "€450",
         image: perfumeImg,
+        dateAdded: '2025-11-15',
+        popularity: 98
     },
     {
         id: 2,
@@ -19,6 +21,8 @@ export const products = [
         category: "Timepiece",
         price: "€12,500",
         image: watchImg,
+        dateAdded: '2025-10-01',
+        popularity: 85
     },
     {
         id: 3,
@@ -26,6 +30,8 @@ export const products = [
         category: "Fine Jewelry",
         price: "€3,200",
         image: crystalImg,
+        dateAdded: '2026-01-10',
+        popularity: 92
     },
     {
         id: 4,
@@ -33,6 +39,8 @@ export const products = [
         category: "Parfum",
         price: "€450",
         image: perfumeNoirII,
+        dateAdded: '2026-01-20',
+        popularity: 100
     },
     {
         id: 5,
@@ -40,6 +48,8 @@ export const products = [
         category: "Fine Jewelry",
         price: "€5,800",
         image: eternityRing,
+        dateAdded: '2025-12-05',
+        popularity: 78
     },
     {
         id: 6,
@@ -47,5 +57,7 @@ export const products = [
         category: "Timepiece",
         price: "€9,800",
         image: chronosSport,
+        dateAdded: '2026-01-25',
+        popularity: 88
     }
 ]

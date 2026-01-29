@@ -49,7 +49,7 @@
 
 /* Featured Section */
 .featured-section {
-    margin-bottom: 8rem;
+    margin-bottom: 4rem;
 }
 
 .featured-card {
@@ -155,6 +155,15 @@
     gap: 1.2rem;
 }
 
+.section-divider {
+    width: 100%;
+    max-width: 140px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+    opacity: 0.4;
+    margin: 4rem auto;
+}
+
 /* Recent Grid */
 .section-heading {
     font-family: var(--font-heading);
@@ -218,7 +227,6 @@
     position: relative;
     overflow: hidden;
     aspect-ratio: 3/4;
-    margin-bottom: 2rem;
     border-radius: 2px;
     border: 1px solid var(--glass-border);
 }

@@ -74,6 +74,8 @@ const Blog = () => {
                     </div>
                 </section>
 
+                <div className="section-divider fade-in-up delay-1"></div>
+
                 <section className="recent-posts-section fade-in-up delay-2">
                     <h3 className="section-heading">Recent Stories</h3>
 
