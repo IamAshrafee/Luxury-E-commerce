@@ -4,7 +4,7 @@ export const blogPosts = [
         title: "The Art of Slow Living",
         category: "Lifestyle",
         date: "January 24, 2026",
-        image: "https://images.unsplash.com/photo-1507643179173-61b039ed6930?q=80&w=1000&auto=format&fit=crop",
+        image: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/724418461.jpg?k=47477eb4d00b785dbfbc47e066ca5faf1192fec8fa44c69e6438b084d61a76f8&o=",
         excerpt: "Discover how to cultivate presence and luxury in your everyday moments through the philosophy of slow living.",
         content: `
             <p>In a world that demands constant connectivity and speed, the true luxury has become time itself. Slow living isn't just about moving at a snail's pace; it is about doing everything at the right speed. It is about savoring the minutes instead of counting them. It is a conscious choice to prioritize quality over quantity, presence over productivity, and connection over superficiality.</p>
@@ -44,7 +44,7 @@ export const blogPosts = [
         title: "Behind the Seams: The Atelier",
         category: "Craftsmanship",
         date: "January 10, 2026",
-        image: "https://images.unsplash.com/photo-1589785250499-5231c6b12a32?q=80&w=1000&auto=format&fit=crop",
+        image: "https://elphile.com/wp-content/uploads/2023/12/focus_atelier-.jpg",
         excerpt: "An exclusive look into the meticulous process of creating our signature leather collection.",
         content: `
             <p>Stepping into our atelier is like entering a sanctuary of silence and focus. The air smells of rich leather and natural beeswax. Here, time seems to stand still, measured only by the rhythmic sound of sewing machines and the soft snip of scissors.</p>
