@@ -3,7 +3,7 @@ import Navigation from './components/layout/Navigation'
 import Hero from './components/sections/Hero'
 import ProductShowcase from './components/sections/ProductShowcase'
 import StorySection from './components/sections/StorySection'
-import MembershipCTA from './components/sections/MembershipCTA'
+import Newsletter from './components/sections/Newsletter'
 import Footer from './components/layout/Footer'
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
       <Hero />
       <ProductShowcase />
       <StorySection />
-      <MembershipCTA />
+      <Newsletter />
       <Footer />
     </div>
   )
