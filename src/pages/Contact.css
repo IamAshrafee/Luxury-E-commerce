@@ -85,6 +85,49 @@
     gap: 0.5rem;
 }
 
+.error-message {
+    color: #f87171;
+    /* Softer Red-400 for dark mode */
+    font-size: 0.7rem;
+    margin-top: 0.5rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    opacity: 0;
+    transform: translateY(-5px);
+    animation: errorReveal 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.error-message::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    background: currentColor;
+    border-radius: 50%;
+}
+
+@keyframes errorReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Error State for Inputs */
+.form-group:has(.error-message) input,
+.form-group:has(.error-message) textarea,
+.select-trigger:has(+ .select-options + input:invalid) {
+    /* Complex selector for custom select if needed, but RHF handles this via class mostly */
+    border-bottom-color: #f87171;
+}
+
+.form-group:has(.error-message) label {
+    color: #f87171;
+}
+
 .form-group label {
     font-size: 0.8rem;
     text-transform: uppercase;
