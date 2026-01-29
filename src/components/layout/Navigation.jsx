@@ -1,4 +1,4 @@
-import React from 'react'
+import { Link } from 'react-router-dom'
 import './Navigation.css'
 
 const Navigation = () => {
@@ -6,12 +6,12 @@ const Navigation = () => {
         <nav className="navigation glass-panel">
             <div className="nav-container">
                 <div className="logo">
-                    <a href="#">LUXE</a>
+                    <Link to="/">LUXE</Link>
                 </div>
                 <ul className="nav-links">
-                    <li><a href="#collections">Collections</a></li>
-                    <li><a href="#story">Story</a></li>
-                    <li><a href="#membership">Membership</a></li>
+                    <li><Link to="/">Collections</Link></li>
+                    <li><Link to="/">Story</Link></li>
+                    <li><Link to="/contact">Contact</Link></li>
                 </ul>
                 <div className="nav-actions">
                     <button className="icon-btn" aria-label="Search">

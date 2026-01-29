@@ -1,4 +1,4 @@
-import React from 'react'
+import { Link } from 'react-router-dom'
 import './Footer.css'
 
 const Footer = () => {
@@ -39,7 +39,7 @@ const Footer = () => {
                         </div>
                         <div className="nav-column">
                             <h4>Client Care</h4>
-                            <a href="#">Contact Us</a>
+                            <Link to="/contact">Contact Us</Link>
                             <a href="#">Shipping & Returns</a>
                             <a href="#">Size Guide</a>
                             <a href="#">FAQ</a>
