@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import './TermsConditions.css'
+import ContactCard from '../components/common/ContactCard'
 
 const TermsConditions = () => {
     // Scroll to top on mount
@@ -79,17 +80,9 @@ const TermsConditions = () => {
 
                         <div className="divider"></div>
 
-                        <section className="policy-contact-section">
-                            <h2>Have questions?</h2>
-                            <p>
-                                If you have any inquiries regarding our terms or legal practices,
-                                our dedicated concierge team is at your disposal.
-                            </p>
-                            <Link to="/contact" className="policy-contact-link">
-                                Contact Concierge
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                            </Link>
-                        </section>
+                        <div className="divider"></div>
+
+                        <ContactCard />
                     </div>
                 </div>
             </div>

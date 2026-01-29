@@ -32,7 +32,7 @@ const Footer = () => {
                         </div>
                         <div className="nav-column">
                             <h4>Maison</h4>
-                            <a href="#">Our Heritage</a>
+                            <Link to="/about">About Luxe</Link>
                             <a href="#">Craftsmanship</a>
                             <a href="#">Sustainability</a>
                             <a href="#">Careers</a>

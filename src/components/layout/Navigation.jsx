@@ -14,7 +14,7 @@ const Navigation = () => {
                 <ul className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
                     <li><Link to="/" onClick={() => setIsMobileMenuOpen(false)}>Home</Link></li>
                     <li><a href="#collections" onClick={() => setIsMobileMenuOpen(false)}>Collections</a></li>
-                    <li><a href="#about" onClick={() => setIsMobileMenuOpen(false)}>About</a></li>
+                    <li><Link to="/about" onClick={() => setIsMobileMenuOpen(false)}>About</Link></li>
                     <li><Link to="/blog" onClick={() => setIsMobileMenuOpen(false)}>Blog</Link></li>
                     <li><Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link></li>
                 </ul>
