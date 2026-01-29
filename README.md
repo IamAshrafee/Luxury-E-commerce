@@ -24,3 +24,47 @@ The UX is designed to be seamless and intuitive.
 - The navigation is simple and easy to use.
 - The product showcase is interactive and engaging.
 - The overall experience is one of luxury and exclusivity.
+
+
+# THE FUTURE
+## At the end, it will be a full-fledged e-commerce website with all the features of a modern e-commerce website.
+
+- # Normal Pages 
+  - Home
+  - Shop
+  - Product
+  - Cart
+  - Checkout
+  - Order Tracking
+  - Contact
+  - About
+  - FAQ
+  - Wishlist
+  - Terms & Conditions
+  - Privacy Policy
+  - Return Policy
+  - Shipping Policy
+
+- # Sections
+  - Product Description
+  - Product Images
+  - Product Reviews
+  - Product Recommendations
+
+- # User Account Pages
+  - Login
+  - Register
+  - Forgot Password
+  - Reset Password
+  - Profile
+  - Orders
+  - Settings
+  - Logout
+
+- # Admin Pages
+  - Dashboard
+  - Products
+  - Orders
+  - Customers
+  - Settings
+  - Logout

@@ -1,10 +1,10 @@
 import React from 'react'
-import Navigation from './components/Navigation'
-import Hero from './components/Hero'
-import ProductShowcase from './components/ProductShowcase'
-import StorySection from './components/StorySection'
-import MembershipCTA from './components/MembershipCTA'
-import Footer from './components/Footer'
+import Navigation from './components/layout/Navigation'
+import Hero from './components/sections/Hero'
+import ProductShowcase from './components/sections/ProductShowcase'
+import StorySection from './components/sections/StorySection'
+import MembershipCTA from './components/sections/MembershipCTA'
+import Footer from './components/layout/Footer'
 
 function App() {
   return (
