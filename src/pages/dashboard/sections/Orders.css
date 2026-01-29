@@ -1,0 +1,205 @@
+.orders-section {
+    width: 100%;
+    animation: fadeIn 0.6s ease-out;
+}
+
+.orders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* Minimal List Item */
+.order-card {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 0;
+    padding: 3rem 0;
+    /* More breathing room */
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    display: grid;
+    /* Columns: ID/Date | Status | Items | Total | Action */
+    grid-template-columns: 1.2fr 0.8fr 2.5fr 1fr 120px;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+}
+
+.order-card::before {
+    content: '';
+    position: absolute;
+    left: -2rem;
+    right: -2rem;
+    top: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.02);
+    transform: scaleY(0);
+    transition: transform 0.4s ease;
+    z-index: -1;
+}
+
+.order-card:first-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.order-card:hover {
+    border-bottom-color: rgba(202, 138, 4, 0.3);
+}
+
+.order-card:hover .order-id {
+    color: var(--color-primary, #CA8A04);
+    padding-left: 0.5rem;
+}
+
+.order-card:hover::before {
+    transform: scaleY(1);
+}
+
+.order-header {
+    display: contents;
+}
+
+.order-id-date {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.order-id {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: var(--color-text-default, #FAFAF9);
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+}
+
+.order-date {
+    font-size: 0.75rem;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-text-muted, #A8A29E);
+    opacity: 0.6;
+}
+
+.order-status {
+    padding: 0.35rem 0.75rem;
+    border-radius: 99px;
+    /* Pill shape */
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    width: fit-content;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: transparent !important;
+}
+
+/* Status Colors - Text only with border */
+.text-green-400 {
+    color: #4ade80;
+    border-color: rgba(74, 222, 128, 0.2);
+}
+
+.text-yellow-400 {
+    color: #facc15;
+    border-color: rgba(250, 204, 21, 0.2);
+}
+
+.text-red-400 {
+    color: #f87171;
+    border-color: rgba(248, 113, 113, 0.2);
+}
+
+.text-gray-400 {
+    color: #9ca3af;
+    border-color: rgba(156, 163, 175, 0.2);
+}
+
+.order-items {
+    font-family: 'Cormorant', serif;
+    font-size: 1.35rem;
+    /* Larger, editorial font */
+    color: var(--color-text-muted, #A8A29E);
+    font-style: italic;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    opacity: 0.9;
+}
+
+.order-footer {
+    display: contents;
+}
+
+.order-total {
+    font-family: 'Cormorant', serif;
+    font-size: 1.5rem;
+    /* Big price */
+    font-weight: 600;
+    color: var(--color-text-default, #FAFAF9);
+    text-align: right;
+    letter-spacing: -0.02em;
+}
+
+.order-card .btn-outline {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--color-text-default, #FAFAF9);
+    padding: 0.75rem 0;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    width: 100%;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.order-card .btn-outline:hover {
+    border-color: var(--color-primary, #CA8A04);
+    color: var(--color-primary, #CA8A04);
+    background: transparent;
+    letter-spacing: 0.25em;
+    /* Widen on hover */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .order-card {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 2rem 0;
+        align-items: flex-start;
+    }
+
+    .order-header {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+    }
+
+    .order-items {
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        margin-bottom: 0.5rem;
+    }
+
+    .order-footer {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+        border-top: none;
+        padding-top: 0;
+    }
+
+    .order-total {
+        text-align: left;
+        padding-right: 0;
+        margin-top: 0;
+        font-size: 1.2rem;
+    }
+}

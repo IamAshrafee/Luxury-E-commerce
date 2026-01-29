@@ -1,0 +1,77 @@
+.settings-section {
+    width: 100%;
+    animation: fadeIn 0.6s ease-out;
+}
+
+.settings-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+}
+
+.settings-card {
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+}
+
+.settings-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.setting-item:first-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.setting-name {
+    font-family: 'Cormorant', serif;
+    font-weight: 400;
+    color: var(--color-text-default, #FAFAF9);
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.setting-desc {
+    font-size: 0.9rem;
+    color: var(--color-text-muted, #A8A29E);
+    font-family: 'Montserrat', sans-serif;
+    opacity: 0.7;
+}
+
+.form-action {
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 640px) {
+    .settings-grid {
+        gap: 4rem;
+    }
+
+    .setting-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+        padding: 2rem 0;
+    }
+
+    .checkbox-wrapper {
+        align-self: flex-start;
+    }
+
+    .setting-name {
+        font-size: 1.25rem;
+    }
+}
