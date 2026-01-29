@@ -52,7 +52,7 @@ const Blog = () => {
 
             <div className="container blog-container">
                 <header className="blog-header fade-in-up">
-                    <h1 className="blog-title">Le <span className="gold-text">Journal</span></h1>
+                    <h1 className="blog-title">Luxe <span className="gold-text">Journal</span></h1>
                     <p className="blog-subtitle">
                         Stories of craftsmanship, culture, and the art of living well.
                     </p>
