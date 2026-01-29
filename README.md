@@ -40,10 +40,6 @@ The UX is designed to be seamless and intuitive.
   - About
   - FAQ
   - Wishlist
-  - Terms & Conditions
-  - Privacy Policy
-  - Return Policy
-  - Shipping Policy
 
 - # Sections
   - Product Description
@@ -55,7 +51,6 @@ The UX is designed to be seamless and intuitive.
   - Login
   - Register
   - Forgot Password
-  - Reset Password
   - Profile
   - Orders
   - Settings
