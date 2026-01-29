@@ -1,0 +1,46 @@
+{
+    "meta": {
+        "brand_name": "Luxe",
+        "description": "Core design tokens for Luxe UI implementation.",
+        "theme": "Dark Luxury Liquid Glass"
+    },
+    "colors": {
+        "background": "#0C0A09",
+        "surface": "#1C1917",
+        "primary": "#CA8A04",
+        "text": {
+            "default": "#FAFAF9",
+            "muted": "#A8A29E"
+        },
+        "glass": {
+            "bg": "rgba(28, 25, 23, 0.3)",
+            "border": "rgba(255, 255, 255, 0.1)",
+            "blur": "12px"
+        }
+    },
+    "typography": {
+        "font_family_headings": [
+            "Cormorant",
+            "serif"
+        ],
+        "font_family_body": [
+            "Montserrat",
+            "sans-serif"
+        ],
+        "font_weight_bold": "700",
+        "font_weight_normal": "400"
+    },
+    "ui": {
+        "spacing": {
+            "xs": "0.5rem",
+            "sm": "1rem",
+            "md": "2rem",
+            "lg": "4rem",
+            "xl": "8rem"
+        },
+        "transitions": {
+            "slow": "0.6s cubic-bezier(0.22, 1, 0.36, 1)",
+            "normal": "0.3s ease-out"
+        }
+    }
+}
