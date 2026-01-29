@@ -50,7 +50,7 @@ const Footer = () => {
                 <div className="footer-bottom">
                     <p className="copyright">&copy; {new Date().getFullYear()} LUXE Inc.</p>
                     <div className="legal-links">
-                        <a href="#">Privacy Policy</a>
+                        <Link to="/privacy-policy">Privacy Policy</Link>
                         <a href="#">Terms of Service</a>
                     </div>
                 </div>
