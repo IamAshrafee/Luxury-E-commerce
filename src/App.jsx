@@ -15,6 +15,9 @@ import Cart from './pages/Cart'
 import Blog from './pages/Blog'
 import BlogPost from './pages/BlogPost'
 
+import Login from './pages/Login'
+import Register from './pages/Register'
+
 import CartSidebar from './components/cart/CartSidebar'
 
 function App() {
@@ -27,6 +30,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/about" element={<About />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<BlogPost />} />
