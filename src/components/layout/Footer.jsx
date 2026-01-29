@@ -51,7 +51,7 @@ const Footer = () => {
                     <p className="copyright">&copy; {new Date().getFullYear()} LUXE Inc.</p>
                     <div className="legal-links">
                         <Link to="/privacy-policy">Privacy Policy</Link>
-                        <a href="#">Terms of Service</a>
+                        <Link to="/terms-conditions">Terms of Service</Link>
                     </div>
                 </div>
             </div>

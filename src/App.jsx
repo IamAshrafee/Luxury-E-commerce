@@ -8,6 +8,8 @@ import Contact from './pages/Contact'
 import ShippingReturns from './pages/ShippingReturns'
 import FAQ from './pages/FAQ'
 import PrivacyPolicy from './pages/PrivacyPolicy'
+import TermsConditions from './pages/TermsConditions'
+import Blog from './pages/Blog'
 
 function App() {
   return (
@@ -16,10 +18,12 @@ function App() {
         <Navigation />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/shipping-returns" element={<ShippingReturns />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-conditions" element={<TermsConditions />} />
         </Routes>
         <Footer />
       </div>

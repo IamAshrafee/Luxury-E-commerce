@@ -1,17 +1,22 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Navigation.css'
 
 const Navigation = () => {
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
     return (
         <nav className="navigation glass-panel">
             <div className="nav-container">
                 <div className="logo">
                     <Link to="/">LUXE</Link>
                 </div>
-                <ul className="nav-links">
-                    <li><Link to="/">Collections</Link></li>
-                    <li><Link to="/">Story</Link></li>
-                    <li><Link to="/contact">Contact</Link></li>
+                <ul className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
+                    <li><Link to="/" onClick={() => setIsMobileMenuOpen(false)}>Home</Link></li>
+                    <li><a href="#collections" onClick={() => setIsMobileMenuOpen(false)}>Collections</a></li>
+                    <li><a href="#about" onClick={() => setIsMobileMenuOpen(false)}>About</a></li>
+                    <li><Link to="/blog" onClick={() => setIsMobileMenuOpen(false)}>Blog</Link></li>
+                    <li><Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link></li>
                 </ul>
                 <div className="nav-actions">
                     <button className="icon-btn" aria-label="Search">
@@ -22,6 +27,15 @@ const Navigation = () => {
                     <button className="icon-btn" aria-label="Cart">
                         <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                        </svg>
+                    </button>
+                    <button
+                        className="icon-btn mobile-menu-btn"
+                        aria-label="Menu"
+                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                    >
+                        <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={isMobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
                         </svg>
                     </button>
                 </div>
