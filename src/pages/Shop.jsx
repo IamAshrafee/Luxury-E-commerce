@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import { addToCart } from '../store/cartSlice'
 import './Shop.css'
 import { products } from '../data/products'
 
 const Shop = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const [sortBy, setSortBy] = useState('newest');
     const [gridCols, setGridCols] = useState(window.innerWidth < 768 ? 1 : 3);
     const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -161,15 +163,20 @@ const Shop = () => {
                             style={{
                                 animation: 'fadeInUp 0.8s ease-out forwards',
                                 opacity: 0, /* ensure hidden before animation */
-                                animationDelay: `${index * 100}ms`
+                                animationDelay: `${index * 100}ms`,
+                                cursor: 'pointer'
                             }}
+                            onClick={() => navigate(`/product/${product.id}`)}
                         >
                             <div className="card-image-wrapper">
                                 <img src={product.image} alt={product.name} className="product-image" loading="lazy" />
                                 <div className="card-overlay">
                                     <button
                                         className="view-btn"
-                                        onClick={() => dispatch(addToCart(product))}
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            dispatch(addToCart(product));
+                                        }}
                                     >
                                         Add to Bag
                                     </button>

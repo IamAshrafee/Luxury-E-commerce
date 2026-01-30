@@ -14,6 +14,7 @@ import Shop from './pages/Shop'
 import Cart from './pages/Cart'
 import Blog from './pages/Blog'
 import BlogPost from './pages/BlogPost'
+import ProductDetails from './pages/ProductDetails/ProductDetails'
 
 import Login from './pages/Login'
 import Register from './pages/Register'
@@ -39,6 +40,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<BlogPost />} />
+          <Route path="/product/:id" element={<ProductDetails />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/shipping-returns" element={<ShippingReturns />} />
           <Route path="/faq" element={<FAQ />} />
